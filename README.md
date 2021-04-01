@@ -27,12 +27,15 @@ Here's how to proceed:
 1. In this folder, follow steps 1 - 8 from the *Make your own table* section of https://github.com/SEI-SEA-1-25/intro-to-sequelize.
 1. Use steps 9 - 12 to create the bounties table, and then use them again to create the hunters table.
 
+sequelize model:generate --name=yourModelNameInSingular --attributes=firstColumn:firstDataType,secondColumn=secondDataType
+
+
 ## Basic CRUD
 Make a dbTest.js file to run the following steps from. After you finish each step, you can comment it out as you move onto the next one.
 TIP: each of these requests returns a promise, so use await or .then to unpack the promise
 
 1. Make a bounty with a name of Han Solo, wantedFor of Owing Money, reward of 500000, and captured of false.
-1. Make a hunter with a name of Boba Fett, a client of Jabba the Hut, and an active of true. 
+1. Make a hunter with a name of Boba Fett, a client of Jabba the Hut, and an active of true.
 1. Make a hunter with a name of Dengar, a client of Mercurial Swift, and an active of false. Try to do this using findOrCreate (knowing that there isn't one to find, and that sequelize will create it).
 1. Find all bounties, assign them to a variable, and console.log them.
 1. Find all hunters with active = true, assign them to a variable, and console.log them.
