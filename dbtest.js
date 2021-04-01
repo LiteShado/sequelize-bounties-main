@@ -1,4 +1,4 @@
-// const models = require('./models')
+const models = require('./models')
 // models.bounty.create({
 //   name: 'Nat Richmond',
 //   wantedFor: 'Winning too much',
@@ -44,6 +44,21 @@
 //     })
 //     console.log(nat);
 // }
+const findBounties = async () => {
+    const bounties = await models.bounty.findAll()
+    console.log(bounties);
+}
+findBounties()
+
+
+// models.hunter.findAll().then(allHunters => {
+//     for (hunter of allHunters) {
+//         if (hunter.active === true) {
+//             console.log(hunter);
+//         }
+//     }
+// })
+
 // const bountiesVar = async() => {
 //     const hans = await models.owner.findOne({
 //       where: {
@@ -52,6 +67,7 @@
 //     })
 //     console.log(hans);
 // }
+
 
 // 1. Find all hunters with active = true, assign them to a variable, and console.log them.
 
@@ -80,8 +96,45 @@
 // SET captured = "1"
 // WHERE id = 2;
 
+
+// models.bounty.update ({
+//     captured: true
+// }, {
+//     where: {
+//         name: 'Han Solo'
+//     }
+// })
 // 1. Delete Dengar. Nobody remembers this guy anyway.
 
 // DELETE FROM hunters WHERE id=2;
 
+// const deleteDengar = async () => {
+//     const dengar = await models.hunters.findOne({
+//         where : {
+//             name: 'Dengar'
+//         }
+//     })
+
+//     dengar.destroy()
+// }
+
+// deleteDengar()
 // 1. Ok recreate Dengar. The deletion was just for practice. We'll actually need him later.
+
+
+
+// const associateHanAndBoba = async () => {
+//     const han = models.bounty.findOne({
+//         where: {
+//             name: 'Han Solo'
+//         }
+//     })
+//     const boba = await models.hunter.findOne({
+//         where: {
+//             name: 'Boba Fett'
+//         }
+//     })
+
+//     })
+// han.addHunter(boba)
+// }
